@@ -1,6 +1,6 @@
 # Docker file for python simple tidal-dl web server build
 
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive \
  APACHE_RUN_USER=www-data \
@@ -16,7 +16,8 @@ RUN apt update && apt -y install \
     apache2 \
     nano \
     python3 \
-    python3-pip
+    python3-pip \ 
+    net-tools
 
 # Copy necessary files into container
 COPY copy-files/ ./copy-files/
